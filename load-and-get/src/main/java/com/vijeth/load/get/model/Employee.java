@@ -1,11 +1,10 @@
-package com.vijeth.hibernate.model;
+package com.vijeth.load.get.model;
 
 import org.hibernate.annotations.OptimisticLockType;
 
 import javax.persistence.*;
 import java.io.Serializable;
-
-import static javax.persistence.GenerationType.IDENTITY;
+import java.time.LocalDate;
 
 @Entity
 @org.hibernate.annotations.Entity(optimisticLock = OptimisticLockType.ALL, dynamicUpdate = true)
@@ -27,6 +26,9 @@ public class Employee implements Serializable {
 
     @Column(name = "LAST_NAME", unique = false, nullable = false, length = 100)
     private String lastName;
+
+    @Column(name = "JOINING_DATE")
+    private LocalDate joiningDate;
 
     public Integer getEmployeeId() {
         return employeeId;
@@ -58,5 +60,24 @@ public class Employee implements Serializable {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public LocalDate getJoiningDate() {
+        return joiningDate;
+    }
+
+    public void setJoiningDate(LocalDate joiningDate) {
+        this.joiningDate = joiningDate;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "employeeId=" + employeeId +
+                ", email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", joiningDate=" + joiningDate +
+                '}';
     }
 }
