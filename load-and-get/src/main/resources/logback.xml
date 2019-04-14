@@ -14,7 +14,7 @@
         </encoder>
     </appender>
 
-    <logger name="com.vijeth.hibernate" level="DEBUG"/>
+    <logger name="com.vijeth.load.get" level="DEBUG"/>
     <logger name="org.hibernate.type" level="TRACE" />
 
     <root level="info">

@@ -132,6 +132,7 @@
         <module>load-and-get</module>
         <module>common</module>
         <module>embeddable</module>
+        <module>collection</module>
     </modules>
 
 </project>
